@@ -14,7 +14,8 @@ $bg-base: #fff;
 // breakpoints
 $breakpoints: (
   sp: "(width <= 428px)",
-  pc: "(width >= 429px)",
+  tb: "(width >= 429px) and (width <= 1024px)",
+  pc: "(width >= 1025px)"
 );
 
 @mixin mq($breakpoint: pc) {
@@ -44,6 +45,13 @@ body {
   align-items: center;
   padding: 24px 15px 44px;
 
+  @include mq(tb) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 15px 44px;
+  }
+
   @include mq(pc) {
     max-width: calc($width-inner + 15px * 2);
     margin-left: auto;
@@ -58,6 +66,10 @@ body {
 
 .header__nav {
   display: none;
+
+  @include mq(tb) {
+    display: none;
+  }
 
   @include mq(pc) {
     display: flex;
