@@ -6,16 +6,14 @@ $line-height-base: 1.7;
 
 // colors
 $color-base: #333;
-$color-key1: #f5810e;
-$color-key2: #fabe00;
-$color-gradation: linear-gradient(180deg, #eaf4f7 0%, #fff 100%);
-$bg-base: #fff;
+$bg-base-1: #fff;
+$bg-base-2: #f4fbff;
 
 // breakpoints
 $breakpoints: (
   sp: "(width <= 428px)",
   tb: "(width >= 429px) and (width <= 1024px)",
-  pc: "(width >= 1025px)"
+  pc: "(width >= 1025px)",
 );
 
 @mixin mq($breakpoint: pc) {
@@ -31,11 +29,13 @@ body {
   font-size: $font-size-base;
   color: $color-base;
   line-height: $line-height-base;
-  background: $color-gradation;
+  background: linear-gradient(180deg, #eaf4f7 0%, #fff 100%);
   font-family: $font-family-ja;
 }
 
-// header
+/*****************************************
+// ヘッダー
+******************************************/
 .header {
 }
 
@@ -91,7 +91,7 @@ body {
   &::before {
     content: "";
     position: absolute;
-    top: -20px; 
+    top: -20px;
     left: 0;
     right: 0;
     height: 5px;
@@ -127,10 +127,14 @@ body {
   }
 }
 
+/*****************************************
+// SPドロワー
+******************************************/
 .drawer-icon {
   position: relative;
   width: 40px;
   height: 20px;
+  z-index: 60;
 }
 
 .drawer-icon__bar {
@@ -148,4 +152,40 @@ body {
   &:nth-child(3) {
     top: 20px;
   }
+}
+
+.drawer-content {
+  display: none;
+  width: 428px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 142, 221, 0.9) 0%,
+    rgba(43, 198, 201, 0.9) 100%
+  );
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  text-align: center;
+  padding-top: 130px;
+}
+
+.drawer-content__logo {
+  img {
+    width: 180px;
+  }
+}
+
+.drawer-content__menu {
+  margin-top: 60.05px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.drawer-content__link {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
 }

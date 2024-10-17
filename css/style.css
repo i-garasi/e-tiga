@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-size: 16px;
   color: #333;
@@ -7,6 +8,9 @@ body {
   font-family: "Noto Sans JP", sans-serif;
 }
 
+/*****************************************
+// ヘッダー
+******************************************/
 .header__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -119,10 +123,14 @@ body {
   }
 }
 
+/*****************************************
+// SPドロワー
+******************************************/
 .drawer-icon {
   position: relative;
   width: 40px;
   height: 20px;
+  z-index: 60;
 }
 
 .drawer-icon__bar {
@@ -139,4 +147,40 @@ body {
 }
 .drawer-icon__bar:nth-child(3) {
   top: 20px;
+}
+
+.drawer-content {
+  display: none;
+  width: 428px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(34, 142, 221, 0.9)), to(rgba(43, 198, 201, 0.9)));
+  background: linear-gradient(180deg, rgba(34, 142, 221, 0.9) 0%, rgba(43, 198, 201, 0.9) 100%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  text-align: center;
+  padding-top: 130px;
+}
+
+.drawer-content__logo img {
+  width: 180px;
+}
+
+.drawer-content__menu {
+  margin-top: 60.05px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
+
+.drawer-content__link {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
 }
