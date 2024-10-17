@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // fonts
 $font-family-ja: "Noto Sans JP", sans-serif;
 $font-family-en: "Montserrat", sans-serif;
@@ -11,13 +13,13 @@ $bg-base-2: #f4fbff;
 
 // breakpoints
 $breakpoints: (
-  sp: "(width <= 428px)",
-  tb: "(width >= 429px) and (width <= 1024px)",
-  pc: "(width >= 1025px)",
+  sp:"(width >= 320px) and (width <= 767px)",
+  tb: "(width >= 768px) and (width <= 1279px)",
+  pc: "(width >= 1280px)",
 );
 
 @mixin mq($breakpoint: pc) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+  @media #{map.get($breakpoints, $breakpoint)} {
     @content;
   }
 }
@@ -60,10 +62,8 @@ body {
   padding: 24px 15px 44px;
 
   @include mq(tb) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 15px 44px;
+    flex-direction: column;
+    gap: 20px;
   }
 
   @include mq(pc) {
@@ -82,7 +82,7 @@ body {
   display: none;
 
   @include mq(tb) {
-    display: none;
+    display: block;
   }
 
   @include mq(pc) {
@@ -120,13 +120,17 @@ body {
   }
 }
 
-.nav__button-inner {
-}
-
 .nav__button {
+  @include mq(tb) {
+    display: none;
+  }
 }
 
 .header__open {
+  @include mq(tb) {
+    display: none;
+  }
+
   @include mq(pc) {
     display: none;
   }
