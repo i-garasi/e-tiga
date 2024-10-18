@@ -61,6 +61,12 @@ $width-inner: 1200px;
   padding-bottom: 8px;
   position: relative;
 
+  @include mq(pc) {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 3.6px;
+  }
+
   &::after {
     position: absolute;
     content: "";
@@ -337,6 +343,18 @@ body {
 .news__inner {
   padding-left: 15px;
   padding-right: 15px;
+
+  // @include mq(tb) {
+  //   max-width: calc(930px + 15px * 2);
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+
+  @include mq(pc) {
+    max-width: calc(930px + 15px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .news__title {
@@ -344,6 +362,10 @@ body {
 
 .news__items {
   margin-top: 46px;
+
+  @include mq(pc) {
+    margin-top: 60px;
+  }
 }
 
 .news__item {
@@ -367,6 +389,18 @@ body {
   &:first-child {
     padding-bottom: 13px;
   }
+
+  // @include mq(tb) {
+  //   flex-direction: row;
+  //   align-items: center;
+  //   gap: 30px;
+  // }
+
+  @include mq(pc) {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
 }
 
 .news-link {
@@ -376,8 +410,21 @@ body {
 }
 
 .news-link__date {
+  display: block;
   font-size: 14px;
   font-weight: 400;
+
+  // @include mq(tb) {
+  //   font-size: 16px;
+  //   width: 119px;
+  //   flex-shrink: 0;
+  // }
+
+  @include mq(pc) {
+    font-size: 16px;
+    width: 120px;
+    flex-shrink: 0;
+  }
 }
 
 .news-link__title {
@@ -385,11 +432,31 @@ body {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.8;
+
+  // @include mq(tb) {
+  //   font-size: 16px;
+  // }
+
+  @include mq(pc) {
+    font-size: 16px;
+  }
 }
 
 .news-pagination {
   margin-top: 46px;
   text-align: center;
+
+  // @include mq(tb) {
+  //   margin-top: 26px;
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
+
+  @include mq(pc) {
+    margin-top: 31px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .news-pagination__links {
@@ -399,10 +466,14 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
+
+  @media (width <= 427px) {
+    gap: 5px;
+  }
 }
 
 .news-pagination__item {
-  width: 36px;
+  min-width: 36px;
   height: 36px;
   border: 1px solid #828282;
   background: #fff;
@@ -436,5 +507,13 @@ body {
     color: #2392db;
     font-weight: 700;
     letter-spacing: 3px;
+  }
+
+  // @include mq(tb) {
+  //   margin-top: 0;
+  // }
+
+  @include mq(pc) {
+    margin-top: 0;
   }
 }

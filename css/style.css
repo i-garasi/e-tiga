@@ -39,6 +39,13 @@
   padding-bottom: 8px;
   position: relative;
 }
+@media (width >= 1280px) {
+  .heading-1 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 3.6px;
+  }
+}
 .heading-1::after {
   position: absolute;
   content: "";
@@ -346,9 +353,21 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 }
+@media (width >= 1280px) {
+  .news__inner {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .news__items {
   margin-top: 46px;
+}
+@media (width >= 1280px) {
+  .news__items {
+    margin-top: 60px;
+  }
 }
 
 .news__item {
@@ -376,10 +395,31 @@ body {
 .news__item:first-child {
   padding-bottom: 13px;
 }
+@media (width >= 1280px) {
+  .news__item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 30px;
+  }
+}
 
 .news-link__date {
+  display: block;
   font-size: 14px;
   font-weight: 400;
+}
+@media (width >= 1280px) {
+  .news-link__date {
+    font-size: 16px;
+    width: 120px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
 }
 
 .news-link__title {
@@ -388,10 +428,26 @@ body {
   font-weight: 400;
   line-height: 1.8;
 }
+@media (width >= 1280px) {
+  .news-link__title {
+    font-size: 16px;
+  }
+}
 
 .news-pagination {
   margin-top: 46px;
   text-align: center;
+}
+@media (width >= 1280px) {
+  .news-pagination {
+    margin-top: 31px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .news-pagination__list {
@@ -403,9 +459,14 @@ body {
           justify-content: center;
   gap: 20px;
 }
+@media (width <= 427px) {
+  .news-pagination__list {
+    gap: 5px;
+  }
+}
 
 .news-pagination__item {
-  width: 36px;
+  min-width: 36px;
   height: 36px;
   border: 1px solid #828282;
   background: #fff;
@@ -439,4 +500,9 @@ body {
   color: #2392db;
   font-weight: 700;
   letter-spacing: 3px;
+}
+@media (width >= 1280px) {
+  .news-pagination__button {
+    margin-top: 0;
+  }
 }
