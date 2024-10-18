@@ -13,7 +13,7 @@ $bg-base-2: #f4fbff;
 
 // breakpoints
 $breakpoints: (
-  sp:"(width >= 320px) and (width <= 767px)",
+  sp: "(width >= 320px) and (width <= 767px)",
   tb: "(width >= 768px) and (width <= 1279px)",
   pc: "(width >= 1280px)",
 );
@@ -29,7 +29,7 @@ $width-inner: 1200px;
 
 .button {
   display: inline-block;
-  padding: 9px 54px;
+  padding: 9px 53px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -39,6 +39,38 @@ $width-inner: 1200px;
   color: #f6f7f7;
   font-weight: 700;
   letter-spacing: 3px;
+}
+
+.inner {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include mq(pc) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.heading-1 {
+  color: #238fdc;
+  text-align: center;
+  font-family: $font-family-en;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  padding-bottom: 8px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #2bc8c8;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 body {
@@ -59,7 +91,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 15px 44px;
+  padding: 24px 15px 0;
 
   @include mq(tb) {
     flex-direction: column;
@@ -67,6 +99,7 @@ body {
   }
 
   @include mq(pc) {
+    padding-top: 17px;
     max-width: calc($width-inner + 15px * 2);
     margin-left: auto;
     margin-right: auto;
@@ -87,7 +120,7 @@ body {
 
   @include mq(pc) {
     display: flex;
-    gap: 169px;
+    gap: 186px;
   }
 }
 
@@ -227,6 +260,7 @@ body {
 ******************************************/
 .fv {
   text-align: center;
+  padding-top: 44px;
   padding-bottom: 80px;
 }
 
@@ -259,6 +293,9 @@ body {
   margin-top: 40px;
 
   @include mq(pc) {
+    margin-top: 0;
+    padding-left: 2px;
+    padding-top: 6px;
     text-align-last: left;
   }
 }
@@ -289,4 +326,115 @@ body {
 
 .fv__button {
   margin-top: 30px;
+}
+
+/*****************************************
+// news
+******************************************/
+.news {
+}
+
+.news__inner {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.news__title {
+}
+
+.news__items {
+  margin-top: 46px;
+}
+
+.news__item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: #e3e3e3;
+  }
+
+  &:first-child {
+    padding-bottom: 13px;
+  }
+}
+
+.news-link {
+}
+
+.news-link__meta {
+}
+
+.news-link__date {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.news-link__title {
+  color: #111;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.news-pagination {
+  margin-top: 46px;
+  text-align: center;
+}
+
+.news-pagination__links {
+}
+
+.news-pagination__list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.news-pagination__item {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #828282;
+  background: #fff;
+  display: grid;
+  place-items: center;
+
+  a {
+    color: #707070;
+    font-family: $font-family-en;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 1.44px;
+  }
+
+  &:first-child,
+  &:last-child {
+    border: none;
+  }
+}
+
+.news-pagination__button {
+  margin-top: 30px;
+  display: inline-flex;
+  padding: 4px 21px;
+  border-radius: 2px;
+  border: 1px solid #2392db;
+  box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
+
+  a {
+    color: #2392db;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
 }
