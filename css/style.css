@@ -58,6 +58,36 @@
           transform: translateX(-50%);
 }
 
+.heading-2 {
+  color: #228ddd;
+  font-family: "Montserrat", sans-serif;
+}
+@media (width >= 1280px) {
+  .heading-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 30px;
+  }
+}
+
+.heading-2__en {
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 3.6px;
+}
+
+.heading-2__ja {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2.66px;
+}
+
 body {
   font-size: 16px;
   color: #333;
@@ -684,3 +714,7 @@ body {
     text-align: left;
   }
 }
+
+/*****************************************
+// casestudy
+******************************************/

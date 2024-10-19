@@ -79,6 +79,31 @@ $width-inner: 1200px;
   }
 }
 
+.heading-2 {
+  color: #228ddd;
+  font-family: $font-family-en;
+
+  @include mq(pc) {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+.heading-2__en {
+  font-family: $font-family-en;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 3.6px;
+}
+
+.heading-2__ja {
+  font-family: $font-family-ja;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2.66px;
+}
+
 body {
   font-size: $font-size-base;
   color: $color-base;
@@ -615,4 +640,34 @@ body {
     margin-top: 5px;
     text-align: left;
   }
+}
+
+/*****************************************
+// casestudy
+******************************************/
+.casestudy {
+}
+
+.casestudy__inner {
+}
+
+.casestudy__title {
+}
+
+.casestudy-card {
+}
+
+.casestudy-card__img {
+}
+
+.casestudy-card__body {
+}
+
+.casestudy-card__title {
+}
+
+.casestudy-card__text {
+}
+
+.casestudy-card__tag {
 }
