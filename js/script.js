@@ -2,13 +2,13 @@ $(function () {
   const swiper = new Swiper("#js-casestudy-swiper", {
     // Optional parameters
     loop: true,
-    autoplay: {
-      delay: 3000, //何秒ごとにスライドを動かすか
-      stopOnLastSlide: false, //最後のスライドで自動再生を終了させるか
-      disableOnInteraction: true, //ユーザーの操作時に止める
-      reverseDirection: false, //自動再生を逆向きにする
-    },
-    speed: 1000, //表示切り替えのスピード
+    // autoplay: {
+    //   delay: 3000, //何秒ごとにスライドを動かすか
+    //   stopOnLastSlide: false, //最後のスライドで自動再生を終了させるか
+    //   disableOnInteraction: true, //ユーザーの操作時に止める
+    //   reverseDirection: false, //自動再生を逆向きにする
+    // },
+    // speed: 1000, //表示切り替えのスピード
     effect: "slide", //切り替えのmotion (※1)
 
     // If we need pagination
@@ -32,15 +32,19 @@ $(function () {
       },
       375: {
         slidesPerView: 1.3,
-        spaceBetween: 15,
+        spaceBetween: 18,
       },
       600: {
         slidesPerView: 1.2,
-        spaceBetween: 15,
+        spaceBetween: 18,
+      },
+      800: {
+        slidesPerView: 2,
+        spaceBetween: 18,
       },
       1025: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+        slidesPerView: 3,
+        spaceBetween: 18,
       },
       1500: {
         slidesPerView: 3,
