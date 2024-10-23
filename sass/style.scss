@@ -110,7 +110,7 @@ body {
   font-size: $font-size-base;
   color: $color-base;
   line-height: $line-height-base;
-  background: linear-gradient(180deg, #eaf4f7 0%, #fff 100%);
+  background: $bg-base-2;
   font-family: $font-family-ja;
 }
 
@@ -118,6 +118,7 @@ body {
 // header
 ******************************************/
 .header {
+  background: #eaf4f7;
 }
 
 .header__inner {
@@ -292,6 +293,7 @@ body {
 // fv
 ******************************************/
 .fv {
+  background: linear-gradient(180deg, #eaf4f7 0%, #fff 100%);
   text-align: center;
   padding-top: 44px;
   padding-bottom: 80px;
@@ -648,6 +650,8 @@ body {
 // casestudy
 ******************************************/
 .casestudy {
+  background: #fff;
+
   @include mq(pc) {
     padding-left: 80px;
     padding-right: 80px;
@@ -799,21 +803,6 @@ body {
   transform: translateX(-50%);
 }
 
-//progressbarの場合
-// .swiper-pagination.swiper-pagination-progressbar.swiper-pagination-horizontal {
-//     top: calc(100% - 10px);
-//     height: 10px;
-//     background: gray;
-// }
-// //実際に変化する棒の色
-// .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-//     background: red;
-// }
-
-// ==============================
-//     navigation について
-// ==============================
-
 .swiper-button-prev,
 .swiper-button-next {
   width: 44px;
@@ -836,4 +825,93 @@ body {
 .swiper-button-next {
   right: 0;
   background: url(../img/next-icon.png) no-repeat center center / contain;
+}
+
+/*****************************************
+// price
+******************************************/
+.price {
+}
+
+.price__inner {
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+.price__title {
+}
+
+.price__card-container {
+  margin-top: 46px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.price__card-item {
+}
+
+.price-card {
+  padding: 30px 20px;
+  max-width: calc(300px + 20px * 2);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.price-card__title {
+  text-align: center;
+}
+
+.price-card__title-main {
+  color: #2392db;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: normal;
+}
+
+.price-card__title-sub {
+  color: #2392db;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 3.6px;
+
+  span {
+    color: #333;
+    font-size: 16px;
+  }
+}
+
+.price-card__body {
+  margin-top: 36px;
+}
+
+.price-card__table {
+  width: 100%;
+  // デフォルトで線が二重になるのでこれを一つにする
+  border-collapse: collapse;
+
+  // テーブルの列幅を均等にする
+  table-layout: fixed;
+  tr {
+    border-bottom: 1px solid #c2c2c2;
+  }
+
+  .td-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 12px;
+  }
+
+  td {
+    color: #333;
+    &:nth-child(2) {
+      text-align: right;
+    }
+  }
+}
+
+.price-card__button {
+  margin-top: 30px;
+  text-align: center;
 }
