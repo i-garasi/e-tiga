@@ -836,6 +836,29 @@ body {
 .price__inner {
   padding-left: 64px;
   padding-right: 64px;
+  display: grid;
+  place-content: center;
+
+  @media (width <= 375px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include mq(tb) {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: calc(960px + 30px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include mq(pc) {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: calc(960px + 30px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .price__title {
@@ -846,6 +869,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  @include mq(tb) {
+    margin-top: 40px;
+    flex-direction: row;
+  }
+
+  @include mq(pc) {
+    margin-top: 40px;
+    flex-direction: row;
+  }
 }
 
 .price__card-item {
@@ -870,6 +903,7 @@ body {
 }
 
 .price-card__title-sub {
+  margin-top: 7px;
   color: #2392db;
   font-weight: 700;
   font-size: 36px;
@@ -879,11 +913,17 @@ body {
   span {
     color: #333;
     font-size: 16px;
+    font-weight: 700;
+    line-height: 1.7;
   }
 }
 
 .price-card__body {
-  margin-top: 36px;
+  margin-top: 34px;
+
+  @include mq(pc) {
+    margin-top: 30px;
+  }
 }
 
 .price-card__table {
@@ -900,7 +940,7 @@ body {
   .td-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 6px 12px;
+    padding: 6px 12px 5px;
   }
 
   td {

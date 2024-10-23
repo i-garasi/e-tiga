@@ -904,6 +904,32 @@ body {
 .price__inner {
   padding-left: 64px;
   padding-right: 64px;
+  display: grid;
+  place-content: center;
+}
+@media (width <= 375px) {
+  .price__inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (width >= 768px) and (width <= 1279px) {
+  .price__inner {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (width >= 1280px) {
+  .price__inner {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .price__card-container {
@@ -916,6 +942,24 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 30px;
+}
+@media (width >= 768px) and (width <= 1279px) {
+  .price__card-container {
+    margin-top: 40px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media (width >= 1280px) {
+  .price__card-container {
+    margin-top: 40px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .price-card {
@@ -937,6 +981,7 @@ body {
 }
 
 .price-card__title-sub {
+  margin-top: 7px;
   color: #2392db;
   font-weight: 700;
   font-size: 36px;
@@ -946,10 +991,17 @@ body {
 .price-card__title-sub span {
   color: #333;
   font-size: 16px;
+  font-weight: 700;
+  line-height: 1.7;
 }
 
 .price-card__body {
-  margin-top: 36px;
+  margin-top: 34px;
+}
+@media (width >= 1280px) {
+  .price-card__body {
+    margin-top: 30px;
+  }
 }
 
 .price-card__table {
@@ -967,7 +1019,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 6px 12px;
+  padding: 6px 12px 5px;
 }
 .price-card__table td {
   color: #333;
