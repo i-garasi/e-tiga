@@ -74,4 +74,22 @@ $(function () {
     $("#js-drawer-icon").removeClass("is-checked");
     $("#js-drawer-content").removeClass("is-checked");
   });
+
+  const tabs = document.querySelectorAll(".company__tab-item");
+  const contents = document.querySelectorAll(".company__content");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      // アクティブなタブをリセット
+      tabs.forEach((item) => item.classList.remove("active"));
+      contents.forEach((content) => content.classList.remove("active"));
+
+      // クリックされたタブにアクティブクラスを追加
+      tab.classList.add("active");
+
+      // 対応するコンテンツを表示
+      const target = tab.getAttribute("data-tab");
+      document.getElementById(target).classList.add("active");
+    });
+  });
 });
