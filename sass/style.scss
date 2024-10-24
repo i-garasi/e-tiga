@@ -38,6 +38,12 @@ $width-inner: 1200px;
   color: #f6f7f7;
   font-weight: 700;
   letter-spacing: 3px;
+
+  &--white {
+    color: #fff;
+    border: 1px solid #fff;
+    background: transparent;
+  }
 }
 
 .inner {
@@ -1148,4 +1154,30 @@ body {
       line-height: 1.7;
     }
   }
+}
+/*****************************************
+// cta
+******************************************/
+.cta {
+  background: linear-gradient(90deg, #2188de 1.75%, #2bcbc6 97.75%);
+}
+
+.cta__inner {
+  color: #fff;
+  text-align: center;
+}
+
+.cta__title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2.6px;
+}
+
+.cta__text {
+  margin-top: 8px;
+  letter-spacing: 1.6px;
+}
+
+.cta__button {
+  margin-top: 17px;
 }
