@@ -32,7 +32,6 @@ $width-inner: 1200px;
   padding: 9px 53px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   border-radius: 48px;
   background: linear-gradient(90deg, #2188de 1.75%, #2bcbc6 97.75%);
   box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
@@ -104,6 +103,18 @@ $width-inner: 1200px;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 2.66px;
+}
+
+.hidden-sp {
+  @include mq(sp) {
+    display: none;
+  }
+}
+
+.hidden-pc {
+  @include mq(pc) {
+    display: none;
+  }
 }
 
 body {
@@ -972,28 +983,67 @@ body {
 }
 
 .company__body {
-  margin-top: 46px;
+  margin-top: 72px;
+  border: 2px solid #2392db;
+  position: relative;
+  height: 510px;
+
+  @include mq(tb) {
+    max-width: calc(900px + 30px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include mq(pc) {
+    max-width: calc(900px + 30px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .company__tabs {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .company__tab-item {
-  width: 122px;
+  flex: 1;
+  max-width: 122px;
   padding: 9px 20px;
   color: #2392db;
   font-weight: 700;
   box-shadow: 5px 7px 34px 0px #f1f1f1;
-  background: url(../img/company-arrow-blue.png) no-repeat center left 12px /
+  background: #fff url(../img/company-arrow-blue.png) no-repeat center left 12px /
     10px 7px;
 
   &:nth-child(n + 2) {
     border-left: 1px solid #2392db;
   }
+
+  &.active {
+    color: #fff;
+    background: #2392db url(../img/company-arrow-white.png) no-repeat center
+      left 12px / 10px 7px;
+  }
+
+  @media (width <= 375px) {
+    padding: 8px;
+    font-size: 12px;
+  }
 }
 
 .company__contents {
+  padding: 60px 30px;
+
+  @media (width <= 427px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .company__content {
@@ -1014,74 +1064,88 @@ body {
   text-align: center;
 }
 
-.company-info__wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+.company-info__table {
+  margin-top: 67px;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  table-layout: fixed;
 
-  @include mq(pc) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+  @media (width <= 427px) {
+    width: 250px;
+    font-size: 12px;
   }
-}
 
-.company-info__item-1 {
-  @include mq(pc) {
-    grid-area: 1 / 1 / 2 / 2;
+  th,
+  td {
+    border: 1px solid #000;
+    height: 53px;
+    vertical-align: middle;
   }
-}
-.company-info__item-2 {
-  @include mq(pc) {
-    grid-area: 1 / 2 / 2 / 3;
+
+  tr:nth-child(3) {
+    th,
+    td {
+      height: 79px;
+    }
   }
-}
-.company-info__item-3 {
-  @include mq(pc) {
-    grid-area: 2 / 1 / 3 / 2;
+
+  th {
+    text-align: center;
+    background: #f2f2f2;
+    font-weight: 700;
   }
-}
-.company-info__item-4 {
-  @include mq(pc) {
-    grid-area: 2 / 2 / 3 / 3;
-  }
-}
-.company-info__item-5 {
-  @include mq(pc) {
-    grid-area: 3 / 1 / 4 / 2;
-  }
-}
-.company-info__item-6 {
-  @include mq(pc) {
-    grid-area: 3 / 2 / 4 / 5;
-  }
-}
-.company-info__item-7 {
-  @include mq(pc) {
-    grid-area: 1 / 3 / 2 / 4;
-  }
-}
-.company-info__item-8 {
-  @include mq(pc) {
-    grid-area: 1 / 4 / 2 / 5;
-  }
-}
-.company-info__item-9 {
-  @include mq(pc) {
-    grid-area: 2 / 3 / 3 / 4;
-  }
-}
-.company-info__item-10 {
-  @include mq(pc) {
-    grid-area: 2 / 4 / 3 / 5;
+
+  td {
+    padding-left: 10px;
+    color: #333;
   }
 }
 
 .company__history {
+  text-align: center;
 }
 
 .company__history-item {
+  color: #2392db;
+  font-weight: 700;
+
+  &::before {
+    content: "•";
+    font-size: 20px;
+    color: #2bcbc6;
+  }
+
+  &:nth-child(n + 2) {
+    margin-top: 16px;
+  }
+
+  span {
+    margin-left: 12px;
+    display: block;
+    color: #000;
+    font-weight: 400;
+  }
 }
 
 .company__certification {
+  @include mq(pc) {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  p {
+    &:first-child {
+      color: #2392db;
+      font-weight: 700;
+    }
+
+    &:last-child {
+      margin-top: 14px;
+      color: #333;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+  }
 }

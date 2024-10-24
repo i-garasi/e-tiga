@@ -53,18 +53,14 @@ $(function () {
     },
   });
 
-  document.querySelectorAll(".nav__link").forEach((item) => {
-    item.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      document.querySelectorAll(".nav__link").forEach((link) => {
-        link.classList.remove("active");
-      });
-
-      this.classList.add("active");
-    });
+  // ナビゲーションリンククリック時に上部にバーを表示
+  $(".nav__link").on("click", function (e) {
+    e.preventDefault();
+    $(".nav__link").removeClass("active");
+    $(this).addClass("active");
   });
 
+  // ドロワーの開閉
   $("#js-drawer-icon").on("click", function () {
     $(this).toggleClass("is-checked");
     $("#js-drawer-content").toggleClass("is-checked");
@@ -75,21 +71,21 @@ $(function () {
     $("#js-drawer-content").removeClass("is-checked");
   });
 
-  const tabs = document.querySelectorAll(".company__tab-item");
-  const contents = document.querySelectorAll(".company__content");
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", function () {
-      // アクティブなタブをリセット
-      tabs.forEach((item) => item.classList.remove("active"));
-      contents.forEach((content) => content.classList.remove("active"));
+  // companyタブ切り替え
+  const tabs = $(".company__tab-item");
+  const contents = $(".company__content");
 
-      // クリックされたタブにアクティブクラスを追加
-      tab.classList.add("active");
+  tabs.on("click", function () {
+    // アクティブなタブをリセット
+    tabs.removeClass("active");
+    contents.removeClass("active");
 
-      // 対応するコンテンツを表示
-      const target = tab.getAttribute("data-tab");
-      document.getElementById(target).classList.add("active");
-    });
+    // クリックされたタブにアクティブクラスを追加
+    $(this).addClass("active");
+
+    // 対応するコンテンツを表示
+    const target = $(this).data("tab");
+    $("#" + target).addClass("active");
   });
 });
