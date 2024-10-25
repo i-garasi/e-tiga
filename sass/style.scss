@@ -117,6 +117,12 @@ $width-inner: 1200px;
   }
 }
 
+.hidden-tb {
+  @include mq(tb) {
+    display: none;
+  }
+}
+
 .hidden-pc {
   @include mq(pc) {
     display: none;
@@ -983,6 +989,14 @@ body {
 .company__inner {
   padding-left: 15px;
   padding-right: 15px;
+
+  @include mq(pc) {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: calc(900px + 30px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .company__title {
@@ -995,15 +1009,19 @@ body {
   height: 510px;
 
   @include mq(tb) {
-    max-width: calc(900px + 30px * 2);
+    margin-top: 77px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    height: 470px;
   }
 
   @include mq(pc) {
-    max-width: calc(900px + 30px * 2);
+    margin-top: 77px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    height: 470px;
   }
 }
 
@@ -1015,6 +1033,10 @@ body {
   top: -24px;
   left: 50%;
   transform: translateX(-50%);
+
+  @include mq(pc) {
+    top: -42px;
+  }
 }
 
 .company__tab-item {
@@ -1027,6 +1049,11 @@ body {
   background: #fff url(../img/company-arrow-blue.png) no-repeat center left 12px /
     10px 7px;
 
+    @include mq(pc) {
+      background: #fff url(../img/company-arrow-blue.png) no-repeat center left 50px /
+      10px 7px;
+    }
+
   &:nth-child(n + 2) {
     border-left: 1px solid #2392db;
   }
@@ -1035,11 +1062,21 @@ body {
     color: #fff;
     background: #2392db url(../img/company-arrow-white.png) no-repeat center
       left 12px / 10px 7px;
+
+      @include mq(pc) {
+        background: #2392db url(../img/company-arrow-white.png) no-repeat center
+        left 50px / 10px 7px;
+      }
   }
 
   @media (width <= 375px) {
     padding: 8px;
     font-size: 12px;
+  }
+
+  @include mq(pc) {
+    max-width: 200px;
+    padding: 26px 56px;
   }
 }
 
@@ -1049,6 +1086,10 @@ body {
   @media (width <= 427px) {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  @include mq(pc) {
+    padding: 77px 30px;
   }
 }
 
@@ -1081,6 +1122,14 @@ body {
   @media (width <= 427px) {
     width: 250px;
     font-size: 12px;
+  }
+
+  @include mq(tb) {
+    width: 500px;
+  }
+
+  @include mq(pc) {
+    width: 800px;
   }
 
   th,
@@ -1165,6 +1214,13 @@ body {
 .cta__inner {
   color: #fff;
   text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include mq(pc) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .cta__title {
