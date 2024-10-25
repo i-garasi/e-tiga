@@ -774,7 +774,6 @@ body {
 // ============================
 // swiper
 // ============================
-
 .swiper-container {
   position: relative;
   margin-top: 50px;
@@ -1049,10 +1048,10 @@ body {
   background: #fff url(../img/company-arrow-blue.png) no-repeat center left 12px /
     10px 7px;
 
-    @include mq(pc) {
-      background: #fff url(../img/company-arrow-blue.png) no-repeat center left 50px /
-      10px 7px;
-    }
+  @include mq(pc) {
+    background: #fff url(../img/company-arrow-blue.png) no-repeat center left
+      50px / 10px 7px;
+  }
 
   &:nth-child(n + 2) {
     border-left: 1px solid #2392db;
@@ -1063,10 +1062,10 @@ body {
     background: #2392db url(../img/company-arrow-white.png) no-repeat center
       left 12px / 10px 7px;
 
-      @include mq(pc) {
-        background: #2392db url(../img/company-arrow-white.png) no-repeat center
+    @include mq(pc) {
+      background: #2392db url(../img/company-arrow-white.png) no-repeat center
         left 50px / 10px 7px;
-      }
+    }
   }
 
   @media (width <= 375px) {
@@ -1204,6 +1203,7 @@ body {
     }
   }
 }
+
 /*****************************************
 // cta
 ******************************************/
@@ -1236,4 +1236,97 @@ body {
 
 .cta__button {
   margin-top: 17px;
+}
+
+/*****************************************
+// blog
+******************************************/
+.blog {
+}
+
+.blog__inner {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include mq(tb) {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: calc(780px + 20px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include mq(pc) {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: calc(1120px + 30px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.blog__title {
+}
+
+.blog__contents {
+  margin-top: 46px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+
+  @include mq(tb) {
+    margin-top: 60px;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(pc) {
+    margin-top: 60px;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog__content {
+}
+
+.blog-card {
+  background: #fff;
+  padding: 12px 15px 16px;
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  box-shadow: 5px 7px 34px 0px #f1f1f1;
+}
+
+.blog-card__img {
+  width: 330px;
+}
+
+.blog-card__title {
+  margin-top: 6px;
+  color: #333;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.blog-card__text {
+  margin-top: 4px;
+  color: #333;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.blog__button {
+  margin-top: 46px;
+  text-align: center;
+
+  @include mq(tb) {
+    margin-top: 60px;
+  }
+
+  @include mq(pc) {
+    margin-top: 60px;
+  }
 }
