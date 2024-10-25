@@ -1355,11 +1355,17 @@ body {
   @include mq(tb) {
     padding-left: 20px;
     padding-right: 20px;
+    max-width: calc(1080px + 20px * 2);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @include mq(pc) {
     padding-left: 30px;
     padding-right: 30px;
+    max-width: calc(1080px + 30px * 2);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -1371,6 +1377,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 36px;
+
+  @include mq(tb) {
+    margin-top: 38px;
+    gap: 40px;
+  }
+
+  @include mq(pc) {
+    margin-top: 38px;
+    gap: 40px;
+  }
 }
 
 .seminar__link {
@@ -1384,6 +1400,18 @@ body {
   display: flex;
   flex-direction: column;
   gap: 22px;
+
+  @include mq(tb) {
+    padding: 24px;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  @include mq(pc) {
+    padding: 24px;
+    flex-direction: row;
+    gap: 30px;
+  }
 }
 
 .seminar-card {
@@ -1391,12 +1419,16 @@ body {
 
 .seminar-card__img {
   text-align: center;
+  max-width: 324px;
+  margin-left: auto;
+  margin-right: auto;
   img {
-    max-width: 324px;
+    width: 100%;
   }
 }
 
 .seminar-card__body {
+  flex: 1;
 }
 
 .seminar-card__meta {
@@ -1448,9 +1480,25 @@ body {
     border: 1px solid #2392db;
     box-shadow: 4px 3px 26px 0px rgba(0, 0, 0, 0.16);
   }
+
+  @include mq(tb) {
+    margin-top: 20px;
+  }
+
+  @include mq(pc) {
+    margin-top: 20px;
+  }
 }
 
 .seminar__button {
   margin-top: 46px;
   text-align: center;
+
+  @include mq(tb) {
+    margin-top: 40px;
+  }
+
+  @include mq(pc) {
+    margin-top: 40px;
+  }
 }
